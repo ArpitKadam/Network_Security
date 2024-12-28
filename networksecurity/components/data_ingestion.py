@@ -33,7 +33,6 @@ class DataIngestion:
             if "id" in df.columns:
                 df = df.drop(columns=["id"], axis=1)               
             df.replace({"na": np.nan}, inplace=True)
-            df.dropna(inplace=True)
 
             logging.info("Completed Exporting Collection as DataFrame")
             return df

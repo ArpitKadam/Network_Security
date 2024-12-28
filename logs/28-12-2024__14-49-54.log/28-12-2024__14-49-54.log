@@ -1,9 +1,0 @@
-[2024-12-28 14:49:58,655] 15 root - INFO - Data Ingestion Started
-[2024-12-28 14:50:02,625] 38 root - INFO - Completed Exporting Collection as DataFrame
-[2024-12-28 14:50:02,863] 51 root - INFO - Completed Exporting Data into Feature Store
-[2024-12-28 14:50:02,948] 62 root - INFO - Completed Splitting Data into Train and Test Set
-[2024-12-28 14:50:02,949] 63 root - INFO - Train Set Shape: (8844, 32)
-[2024-12-28 14:50:02,949] 64 root - INFO - Test Set Shape: (2211, 32)
-[2024-12-28 14:50:02,950] 68 root - INFO - Completed Creating Train and Test Directory
-[2024-12-28 14:50:03,186] 71 root - INFO - Completed Exporting Train and Test Set
-[2024-12-28 14:50:03,278] 18 root - INFO - Data Ingestion Completed
