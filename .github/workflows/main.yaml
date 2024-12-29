@@ -78,6 +78,8 @@ jobs:
       - name: Pull latest image
         run: |
           docker pull ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}:latest
+          echo "Docker Pull: docker pull ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}:latest"
+
 
       - name: Run Docker Image to serve users
         run: |
@@ -85,3 +87,8 @@ jobs:
       - name: Clean previous images and containers
         run: |
           docker system prune -f
+
+      - name: Debug Pull Command
+        run: |
+          echo "Docker Pull Command: docker pull ${{ secrets.AWS_ECR_LOGIN_URI }}/${{ secrets.ECR_REPOSITORY_NAME }}:latest"
+        
