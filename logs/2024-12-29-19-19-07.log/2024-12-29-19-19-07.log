@@ -1,0 +1,77 @@
+[2024-12-29 19:19:14,954] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[2024-12-29 19:19:14,967] 107 dagshub - INFO - Accessing as ArpitKadam
+[2024-12-29 19:19:15,594] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/ArpitKadam/Network_Security "HTTP/1.1 200 OK"
+[2024-12-29 19:19:16,235] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[2024-12-29 19:19:16,242] 107 dagshub - INFO - Initialized MLflow to track repo "ArpitKadam/Network_Security"
+[2024-12-29 19:19:16,244] 107 dagshub - INFO - Repository ArpitKadam/Network_Security initialized!
+[2024-12-29 19:19:31,210] 22 root - INFO - >>>>>>>>>>>>Data Ingestion Started<<<<<<<<<<<<<<
+[2024-12-29 19:19:36,795] 37 root - INFO - Completed Exporting Collection as DataFrame
+[2024-12-29 19:19:36,926] 50 root - INFO - Completed Exporting Data into Feature Store
+[2024-12-29 19:19:36,931] 61 root - INFO - Completed Splitting Data into Train and Test Set
+[2024-12-29 19:19:36,931] 62 root - INFO - Train Set Shape: (8844, 32)
+[2024-12-29 19:19:36,931] 63 root - INFO - Test Set Shape: (2211, 32)
+[2024-12-29 19:19:36,932] 67 root - INFO - Completed Creating Train and Test Directory
+[2024-12-29 19:19:37,064] 70 root - INFO - Completed Exporting Train and Test Set
+[2024-12-29 19:19:37,070] 24 root - INFO - >>>>>>>>>>>>Completed Data Ingestion<<<<<<<<<<<<<<
+[2024-12-29 19:19:37,071] 25 root - INFO - Data Ingestion completed: DataIngestionArtifact(trained_file_path='Artifacts\\2024-12-29-19-19-08\\data_ingestion\\ingested\\train.csv', test_file_path='Artifacts\\2024-12-29-19-19-08\\data_ingestion\\ingested\\test.csv')
+[2024-12-29 19:19:37,087] 34 root - INFO - >>>>>>>>>>>>>>Data Validation started<<<<<<<<<<<<<<
+[2024-12-29 19:19:37,157] 35 root - INFO - Number of columns in the schema: 2
+[2024-12-29 19:19:37,157] 36 root - INFO - Number of columns in the dataframe: 32
+[2024-12-29 19:19:37,157] 41 root - ERROR - Schema and dataframe have different number of columns
+[2024-12-29 19:19:37,157] 35 root - INFO - Number of columns in the schema: 2
+[2024-12-29 19:19:37,157] 36 root - INFO - Number of columns in the dataframe: 32
+[2024-12-29 19:19:37,157] 41 root - ERROR - Schema and dataframe have different number of columns
+[2024-12-29 19:19:37,521] 80 root - INFO - Data validation report: {'_id': {'p_value': 0.5970291509297161, 'drift_status': False}, 'having_IP_Address': {'p_value': 0.9999928159851212, 'drift_status': False}, 'URL_Length': {'p_value': 0.9999999947754254, 'drift_status': False}, 'Shortining_Service': {'p_value': 0.9999999999999952, 'drift_status': False}, 'having_At_Symbol': {'p_value': 1.0, 'drift_status': False}, 'double_slash_redirecting': {'p_value': 1.0, 'drift_status': False}, 'Prefix_Suffix': {'p_value': 0.9999998099738984, 'drift_status': False}, 'having_Sub_Domain': {'p_value': 0.6850515434043538, 'drift_status': False}, 'SSLfinal_State': {'p_value': 0.9999510909578456, 'drift_status': False}, 'Domain_registeration_length': {'p_value': 0.8923284435665428, 'drift_status': False}, 'Favicon': {'p_value': 0.5498506384437393, 'drift_status': False}, 'port': {'p_value': 0.8151359073090507, 'drift_status': False}, 'HTTPS_token': {'p_value': 1.0, 'drift_status': False}, 'Request_URL': {'p_value': 0.6449841622347342, 'drift_status': False}, 'URL_of_Anchor': {'p_value': 0.9996208033369954, 'drift_status': False}, 'Links_in_tags': {'p_value': 0.6930334890847099, 'drift_status': False}, 'SFH': {'p_value': 0.7247242015659158, 'drift_status': False}, 'Submitting_to_email': {'p_value': 0.9597114153770513, 'drift_status': False}, 'Abnormal_URL': {'p_value': 1.0, 'drift_status': False}, 'Redirect': {'p_value': 0.9998299425911609, 'drift_status': False}, 'on_mouseover': {'p_value': 0.9925611176019148, 'drift_status': False}, 'RightClick': {'p_value': 0.998821814236978, 'drift_status': False}, 'popUpWidnow': {'p_value': 0.7786069254909116, 'drift_status': False}, 'Iframe': {'p_value': 0.999931781258988, 'drift_status': False}, 'age_of_domain': {'p_value': 1.0, 'drift_status': False}, 'DNSRecord': {'p_value': 1.0, 'drift_status': False}, 'web_traffic': {'p_value': 0.9999953843756324, 'drift_status': False}, 'Page_Rank': {'p_value': 0.9958579353974752, 'drift_status': False}, 'Google_Index': {'p_value': 1.0, 'drift_status': False}, 'Links_pointing_to_page': {'p_value': 0.999931781258988, 'drift_status': False}, 'Statistical_report': {'p_value': 0.9999760319468036, 'drift_status': False}, 'Result': {'p_value': 0.9999999750532348, 'drift_status': False}}
+[2024-12-29 19:19:37,644] 36 root - INFO - >>>>>>>>>>>>>>Data Validation completed<<<<<<<<<<<<<<
+[2024-12-29 19:19:37,644] 37 root - INFO - Data Validation completed: DataValidationArtifact(validation_status=True, valid_train_file_path='Artifacts\\2024-12-29-19-19-08\\data_validation\\validated\\train.csv', valid_test_file_path='Artifacts\\2024-12-29-19-19-08\\data_validation\\validated\\test.csv', invalid_train_file_path=None, invalid_test_file_path=None, drift_report_file_path='Artifacts\\2024-12-29-19-19-08\\data_validation\\drift_report\\report.yaml')
+[2024-12-29 19:19:37,645] 46 root - INFO - >>>>>>>>>>>>>Data Transformation Started<<<<<<<<<<<<<<
+[2024-12-29 19:19:37,645] 48 root - INFO - Initiating data Reading
+[2024-12-29 19:19:37,736] 51 root - INFO - Data read successfully
+[2024-12-29 19:19:37,736] 52 root - INFO - Imputing missing values in train data
+[2024-12-29 19:19:37,740] 58 root - INFO - Imputing missing values in test data
+[2024-12-29 19:19:37,743] 63 root - INFO - Imputation complete
+[2024-12-29 19:19:37,743] 65 root - INFO - Initiating data transformation pipeline
+[2024-12-29 19:19:37,743] 34 root - INFO - Initiating KNNImputer with parameters{'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+[2024-12-29 19:19:37,743] 38 root - INFO - KNNImputer initiated successfully
+[2024-12-29 19:19:37,747] 68 root - INFO - Data transformation pipeline initiated successfully
+[2024-12-29 19:19:37,758] 73 root - INFO - Converting transformed data to numpy array
+[2024-12-29 19:19:37,759] 76 root - INFO - Train array shape: (8844, 31)
+[2024-12-29 19:19:37,759] 77 root - INFO - Test array shape: (2211, 31)
+[2024-12-29 19:19:37,759] 78 root - INFO - Data converted to numpy array
+[2024-12-29 19:19:37,759] 29 root - INFO - Saving numpy array to file: Artifacts\2024-12-29-19-19-08\data_transformation\transformed\trainnpy
+[2024-12-29 19:19:37,843] 34 root - INFO - Complete saving numpy array to file: Artifacts\2024-12-29-19-19-08\data_transformation\transformed\trainnpy
+[2024-12-29 19:19:37,843] 29 root - INFO - Saving numpy array to file: Artifacts\2024-12-29-19-19-08\data_transformation\transformed\testnpy
+[2024-12-29 19:19:37,845] 34 root - INFO - Complete saving numpy array to file: Artifacts\2024-12-29-19-19-08\data_transformation\transformed\testnpy
+[2024-12-29 19:19:37,845] 40 root - INFO - Saving object to file: Artifacts\2024-12-29-19-19-08\data_transformation\transformed_object\preprocessor.pkl
+[2024-12-29 19:19:37,848] 44 root - INFO - Complete saving object to file: Artifacts\2024-12-29-19-19-08\data_transformation\transformed_object\preprocessor.pkl
+[2024-12-29 19:19:37,848] 40 root - INFO - Saving object to file: final_models/preprocessor.pkl
+[2024-12-29 19:19:37,852] 44 root - INFO - Complete saving object to file: final_models/preprocessor.pkl
+[2024-12-29 19:19:37,852] 86 root - INFO - Data transformation completed
+[2024-12-29 19:19:37,854] 48 root - INFO - >>>>>>>>>>>>>Data Transformation completed<<<<<<<<<<<<<<
+[2024-12-29 19:19:37,854] 49 root - INFO - Data Transformation completed: DataTransformationArtifact(transformed_train_file_path='Artifacts\\2024-12-29-19-19-08\\data_transformation\\transformed\\trainnpy', transformed_test_file_path='Artifacts\\2024-12-29-19-19-08\\data_transformation\\transformed\\testnpy', transformed_object_file_path='Artifacts\\2024-12-29-19-19-08\\data_transformation\\transformed_object\\preprocessor.pkl')
+[2024-12-29 19:19:37,854] 58 root - INFO - >>>>>>>>>>>>Model Trainer started<<<<<<<<<<<<<<
+[2024-12-29 19:19:37,855] 165 root - INFO - Initiating Model Trainer
+[2024-12-29 19:19:37,855] 167 root - INFO - Train File Path: Artifacts\2024-12-29-19-19-08\data_transformation\transformed\trainnpy
+[2024-12-29 19:19:37,855] 169 root - INFO - Test File Path: Artifacts\2024-12-29-19-19-08\data_transformation\transformed\testnpy
+[2024-12-29 19:19:37,881] 51 root - INFO - Choosing Model and Training the Model
+[2024-12-29 19:19:37,882] 63 root - INFO - Hyperparameter Tuning
+[2024-12-29 19:23:21,050] 110 root - INFO - Hyperparameter Tuning Completed
+[2024-12-29 19:23:21,050] 111 root - INFO - Model Report: {'Logistic Regression': 0.6981981981981982, 'Random Forest': 0.8902538902538902, 'Ada Boost': 0.7091728091728092, 'Bagging': 0.8811083811083811, 'Decision Tree': 0.8628173628173629, 'Support Vector Machine': 0.7713622713622714, 'Extra Tree': 0.85001365001365}
+[2024-12-29 19:23:21,050] 113 root - INFO - Best Model Score: 0.8902538902538902
+[2024-12-29 19:23:21,050] 117 root - INFO - Best Model Name: Random Forest
+[2024-12-29 19:23:21,246] 123 root - INFO - Classification Train Metric: ClassificationMetricArtifact(accuracy_score=0.9909543193125283, precision_score=0.989911218724778, recall_score=0.9939222042139384, f1_score=0.9919126566922766)
+[2024-12-29 19:23:21,382] 127 root - INFO - Classification Test Metric: ClassificationMetricArtifact(accuracy_score=0.9728629579375848, precision_score=0.967767929089444, recall_score=0.9836199836199836, f1_score=0.9756295694557271)
+[2024-12-29 19:23:21,382] 130 root - INFO - Tracking with MLFlow
+[2024-12-29 19:23:21,382] 132 root - INFO - Tracking Trained Model with MLFlow
+[2024-12-29 19:24:08,971] 135 root - INFO - Tracking Test Model with MLFlow
+[2024-12-29 19:24:52,718] 138 root - INFO - Completed Tracking Model with MLFlow
+[2024-12-29 19:24:52,719] 52 root - INFO - Loading object from file: Artifacts\2024-12-29-19-19-08\data_transformation\transformed_object\preprocessor.pkl
+[2024-12-29 19:24:52,722] 143 root - INFO - Saving the Trained Model: Artifacts\2024-12-29-19-19-08\model_trainer\trained_model\model.pkl
+[2024-12-29 19:24:52,723] 40 root - INFO - Saving object to file: final_models/model.pkl
+[2024-12-29 19:24:52,804] 44 root - INFO - Complete saving object to file: final_models/model.pkl
+[2024-12-29 19:24:52,804] 148 root - INFO - Network Model: <networksecurity.utils.ml_utils.model.estimator.NetworkModel object at 0x0000026E4D8CDD20>
+[2024-12-29 19:24:52,805] 40 root - INFO - Saving object to file: Artifacts\2024-12-29-19-19-08\model_trainer\trained_model\model.pkl
+[2024-12-29 19:24:53,000] 44 root - INFO - Complete saving object to file: Artifacts\2024-12-29-19-19-08\model_trainer\trained_model\model.pkl
+[2024-12-29 19:24:53,001] 156 root - INFO - Model Trainer Artifact: ModelTrainerArtifact(trained_model_file_path='Artifacts\\2024-12-29-19-19-08\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=ClassificationMetricArtifact(accuracy_score=0.9909543193125283, precision_score=0.989911218724778, recall_score=0.9939222042139384, f1_score=0.9919126566922766), test_metric_artifact=ClassificationMetricArtifact(accuracy_score=0.9728629579375848, precision_score=0.967767929089444, recall_score=0.9836199836199836, f1_score=0.9756295694557271))
+[2024-12-29 19:24:53,011] 60 root - INFO - >>>>>>>>>>>>>Model Trainer completed <<<<<<<<<<<<<<
+[2024-12-29 19:24:53,011] 61 root - INFO - Model Trainer completed: ModelTrainerArtifact(trained_model_file_path='Artifacts\\2024-12-29-19-19-08\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=ClassificationMetricArtifact(accuracy_score=0.9909543193125283, precision_score=0.989911218724778, recall_score=0.9939222042139384, f1_score=0.9919126566922766), test_metric_artifact=ClassificationMetricArtifact(accuracy_score=0.9728629579375848, precision_score=0.967767929089444, recall_score=0.9836199836199836, f1_score=0.9756295694557271))
