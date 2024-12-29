@@ -17,6 +17,11 @@ from sklearn.tree import DecisionTreeClassifier, ExtraTreeClassifier
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier, RadiusNeighborsClassifier, NearestCentroid
 import mlflow
+import mlflow.sklearn
+
+import dagshub
+dagshub.init(repo_owner='ArpitKadam', repo_name='Network_Security', mlflow=True)
+
 
 class ModelTrainer:
     def __init__(self, model_trainer_config: ModelTrainerConfig, data_transformation_artifact: DataTransformationArtifact):
@@ -38,7 +43,7 @@ class ModelTrainer:
             mlflow.log_metric("accuracy_score", accuracy_score)
             mlflow.log_metric("precision_score", precision_score)
             mlflow.log_metric("recall_score", recall_score)
-            mlflow.sklearn.log_model(best_model, "model")
+            mlflow.sklearn.log_model(best_model, "model", registered_model_name="NetworkSecurityModel")
     
 
     def train_model(self, x_train, y_train, x_test, y_test) -> NetworkModel:
@@ -123,16 +128,21 @@ class ModelTrainer:
 
             ## Track with MLFlow
             logging.info("Tracking with MLFlow")
+
             logging.info("Tracking Trained Model with MLFlow")
             self.track_mlflow(best_model, classification_train_metric)
+
             logging.info("Tracking Test Model with MLFlow")
             self.track_mlflow(best_model, classification_test_metric)
+
             logging.info("Completed Tracking Model with MLFlow")
 
             processor = load_object(file_path=self.data_transformation_artifact.transformed_object_file_path)
             make_dir_path = os.path.dirname(self.model_trainer_config.trained_model_file_path)
             os.makedirs(make_dir_path, exist_ok=True)
             logging.info(f"Saving the Trained Model: {self.model_trainer_config.trained_model_file_path}")
+
+            save_object("final_models/model.pkl", best_model)
 
             Network_Model = NetworkModel(processor=processor, model=best_model)
             logging.info(f"Network Model: {Network_Model}")

@@ -1,0 +1,8 @@
+[2024-12-29 09:44:45,109] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[2024-12-29 09:44:45,122] 107 dagshub - INFO - Accessing as ArpitKadam
+[2024-12-29 09:44:46,131] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/ArpitKadam/Network_Security "HTTP/1.1 200 OK"
+[2024-12-29 09:44:46,812] 1025 httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[2024-12-29 09:44:46,819] 107 dagshub - INFO - Initialized MLflow to track repo "ArpitKadam/Network_Security"
+[2024-12-29 09:44:46,822] 107 dagshub - INFO - Repository ArpitKadam/Network_Security initialized!
+[2024-12-29 09:46:06,290] 52 root - INFO - Loading object from file: final_models/preprocessor.pkl
+[2024-12-29 09:46:06,294] 52 root - INFO - Loading object from file: final_models/model.pkl
